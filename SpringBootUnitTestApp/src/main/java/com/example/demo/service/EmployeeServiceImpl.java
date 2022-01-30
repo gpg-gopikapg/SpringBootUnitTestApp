@@ -38,5 +38,12 @@ public class EmployeeServiceImpl implements IEmployeeService {
 		Employee employee=getEmployee(id);
 		repo.delete(employee);
 	}
+
+	@Override
+	public Employee updateEmployee(int id, double salary) {
+		Employee employee=getEmployee(id);
+		employee.setEmpSalary(salary);
+		return repo.save(employee);
+	}
 }
 	
